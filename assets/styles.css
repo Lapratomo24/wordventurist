@@ -4,5 +4,19 @@
 
 body {
     background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-image: url('images/triangle.png');
+    background-repeat: no-repeat;
+    line-height: 200%;
 }
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
 
