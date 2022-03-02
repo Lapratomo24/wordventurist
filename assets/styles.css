@@ -10,8 +10,7 @@ body {
     margin: 0;
     background-image: url('images/triangle.png');
     background-repeat: no-repeat;
-    font-size: 30px;
-    line-height: 50%;
+    font-size: 25px;
     color: #fafafa;
 }
 
@@ -24,7 +23,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
 }
 
 .guess-form {
@@ -49,9 +47,9 @@ body {
 }
 
 .guess-form label {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 900;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 
 input {
@@ -59,13 +57,14 @@ input {
     text-align: center;
     font-size: 1em;
     padding: 0.5em;
-    outline: 5px solid #ffbf00;
+    outline: 2px solid #ffbf00;
     border-radius: 50%;
+    color: #9f2b68;
 }
 
 input:active,
 input:focus {
-    outline: 7px solid #ffbf00;
+    outline: 4px solid #ffbf00;
 }
 
 .guess-btn {
@@ -107,3 +106,7 @@ input:focus {
 .restart-btn:hover {
     transform: scale(0.95);
 } 
+
+.progress {
+    letter-spacing: 7px;
+}
