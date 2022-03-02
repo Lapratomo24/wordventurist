@@ -3,20 +3,33 @@
 }
 
 body {
-    background-color: skyblue;
+    background-color: #9F2B68;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     background-image: url('images/triangle.png');
     background-repeat: no-repeat;
-    line-height: 200%;
+    font-size: 30px;
+    line-height: 150%;
 }
 
-.container{
+.logo {
+    padding-top: 4em;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 90%;
 } 
+
+.guess-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
