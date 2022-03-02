@@ -10,7 +10,7 @@ body {
     margin: 0;
     background-image: url('images/triangle.png');
     background-repeat: no-repeat;
-    font-size: 25px;
+    font-size: 22px;
     color: #fafafa;
 }
 
@@ -47,8 +47,8 @@ body {
 }
 
 .guess-form label {
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 18px;
+    font-weight: 700;
     margin-bottom: 1em;
 }
 
