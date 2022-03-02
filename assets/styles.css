@@ -11,11 +11,12 @@ body {
     background-image: url('images/triangle.png');
     background-repeat: no-repeat;
     font-size: 30px;
-    line-height: 150%;
+    line-height: 50%;
+    color: #fafafa;
 }
 
 .logo {
-    padding-top: 4em;
+    padding-top: 2em;
 }
 
 .container {
@@ -24,7 +25,11 @@ body {
     align-items: center;
     flex-direction: column;
     width: 90%;
-} 
+}
+
+.hide {
+    display: none;
+}
 
 .guess-form {
     display: flex;
@@ -33,3 +38,36 @@ body {
     flex-direction: column;
 }
 
+.progress {
+    color: #ffd700;
+    font-size: 40px;
+}
+
+.guessed-letters {
+    color: #fafafa;
+    list-style: none;
+}
+
+.guessed-letters li {
+    display: inline;
+}
+
+.guess-form label {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 1em;
+}
+
+input {
+    width: 2.25em;
+    text-align: center;
+    font-size: 1em;
+    padding: 0.5em;
+    outline: 5px solid #ffbf00;
+    border-radius: 50%;
+}
+
+input:active,
+input:focus {
+    outline: 7px solid #ffbf00;
+}
