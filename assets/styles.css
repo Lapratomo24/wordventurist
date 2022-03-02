@@ -27,10 +27,6 @@ body {
     width: 90%;
 }
 
-.hide {
-    display: none;
-}
-
 .guess-form {
     display: flex;
     align-items: center;
@@ -55,7 +51,7 @@ body {
 .guess-form label {
     font-size: 18px;
     font-weight: 900;
-    margin: 1em;
+    margin-bottom: 1.5em;
 }
 
 input {
@@ -71,3 +67,43 @@ input:active,
 input:focus {
     outline: 7px solid #ffbf00;
 }
+
+.guess-btn {
+    margin: 1em;
+    padding: 1em 3em;
+    background-color: #ffbf00;
+    border-radius: 50px;
+    border-style: none;
+    color: #9f2b68;
+    font-size: 0.7em;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.guess-btn:active,
+.guess-btn:focus,
+.guess-btn:hover {
+    transform: scale(0.95);
+} 
+
+.hide {
+    display: none;
+}
+
+.restart-btn {
+    margin: 1em;
+    padding: 1em 3em;
+    background-color: #ffbf00;
+    border-radius: 50px;
+    border-style: none;
+    color: #9f2b68;
+    font-size: 0.7em;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.restart-btn:active,
+.restart-btn:focus,
+.restart-btn:hover {
+    transform: scale(0.95);
+} 
