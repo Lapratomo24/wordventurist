@@ -59,5 +59,31 @@ const typeGuess = function (inputValue) {
     } else {
         guessedLettersArray.push(inputValue);
         console.log(guessedLettersArray);
+        letterUpdate();
+        progressUpdate(guessedLettersArray);
     }
+};
+
+const letterUpdate = function () {
+    guessedLetters.innerHTML = "";
+    for (let letter of guessedLettersArray) {
+        const li = document.createElement("li");
+        li.innerText = letter;
+        guessedLetters.append(li);
+    }
+};
+
+const progressUpdate = function (guessedLettersArray) {
+    const wordUppercase = placeholderWord.toUpperCase();
+    const wordArray = wordUppercase.split("");
+    console.log(wordArray);
+    const replaceSymbol = [];
+    for (let letter of wordArray) {
+        if (guessedLettersArray.includes(letter)) {
+            replaceSymbol.push(letter.toUpperCase());
+        } else {
+            replaceSymbol.push("⭐");
+        }
+    }
+    progress.innerText = replaceSymbol.join("");
 };
