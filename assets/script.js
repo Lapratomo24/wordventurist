@@ -11,6 +11,7 @@ const message = document.querySelector(".message");
 const restartButton = document.querySelector(".restart-btn");
 
 const placeholderWord = "football";
+const guessedLettersArray = [];
 
 
 //set up star symbols as placeholders
@@ -28,8 +29,12 @@ placeholderSymbol(placeholderWord);
 //add event listener to capture letter input
 guessButton.addEventListener("click", function (e) {
     e.preventDefault();
+    message.innerText="";
     const inputValue = input.value;
-    console.log(inputValue);
+    const checkDoubleInput = inputValidation(inputValue);
+    if (checkDoubleInput) {
+        typeGuess(inputValue);
+    }
     input.value="";
 });
 
@@ -44,5 +49,15 @@ const inputValidation = function (input) {
         message.innerText = "Hint: A to Z, no numbers and symbols!"
     } else {
         return input;
+    }
+};
+
+const typeGuess = function (inputValue) {
+    inputValue = inputValue.toUpperCase();
+    if (guessedLettersArray.includes(inputValue)) {
+        message.innerText = "Try another letter you haven't picked 😉";
+    } else {
+        guessedLettersArray.push(inputValue);
+        console.log(guessedLettersArray);
     }
 };
