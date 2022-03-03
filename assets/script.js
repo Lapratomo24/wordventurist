@@ -86,4 +86,12 @@ const progressUpdate = function (guessedLettersArray) {
         }
     }
     progress.innerText = replaceSymbol.join("");
+    youWon();
+};
+
+const youWon = function () {
+    if (placeholderWord.toUpperCase() === progress.innerText) {
+        message.classList.add("win");
+        message.innerHTML = `<p class="highlight">You guessed correct the word! Congrats!</p>`;
+    }
 };
