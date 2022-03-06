@@ -11,7 +11,7 @@ const message = document.querySelector(".message");
 const restartButton = document.querySelector(".restart-btn");
 
 let placeholderWord = "football";
-const guessedLettersArray = [];
+let guessedLettersArray = [];
 let guessesLeft = 8;
 
 //function to fetch data containing words; data is derived from a text file I created.
@@ -30,7 +30,7 @@ getData();
 const placeholderSymbol = function (placeholderWord) {
     const placeholderLetters = [];
     for (let letter of placeholderWord) {
-        placeholderLetters.push("⭐");
+        placeholderLetters.push("❔");
     }
     progress.innerText = placeholderLetters.join("");
 };
@@ -41,7 +41,7 @@ guessButton.addEventListener("click", function (e) {
     message.innerText="";
     const inputValue = input.value;
     const checkDoubleInput = inputValidation(inputValue);
-    if (checkDoubleInput) {
+    if (checkDoubleInput) {
         typeGuess(inputValue);
     }
     input.value="";
@@ -90,7 +90,7 @@ const progressUpdate = function (guessedLettersArray) {
         if (guessedLettersArray.includes(letter)) {
             replaceSymbol.push(letter.toUpperCase());
         } else {
-            replaceSymbol.push("⭐");
+            replaceSymbol.push("❔");
         }
     }
     progress.innerText = replaceSymbol.join("");
@@ -107,6 +107,7 @@ const guessCount = function (inputValue) {
     }
     if (guessesLeft === 0) {
         message.innerHTML = `Too bad, the word you're looking for is <span class="higlight">${placeholderWord}</span>`;
+        restartGame();
     } else if (guessesLeft === 1) {
         remainingGuessesSpan.innerText = `only ${guessesLeft} guess`;
     } else {
@@ -118,6 +119,29 @@ const youWon = function () {
     if (placeholderWord.toUpperCase() === progress.innerText) {
         message.classList.add("win");
         message.innerHTML = `<p class="highlight">You guessed correct the word! Congrats!</p>`;
+        restartGame();
     }
 };
 
+const restartGame = function () {
+    guessButton.classList.add("hide");
+    remainingGuesses.classList.add("hide");
+    guessedLetters.classList.add("hide");
+    restartButton.classList.remove("hide");
+};
+
+restartButton.addEventListener("click", function (){
+    message.classList.remove("win");
+    guessesLeft = 8;
+    guessedLettersArray = [];
+    remainingGuessesSpan.innerText = `${guessesLeft} guesses`;
+    guessedLetters.innerHTML = "";
+    message.innerText = "";
+    
+    getData();
+
+    guessButton.classList.remove("hide");
+    remainingGuesses.classList.remove("hide");
+    guessedLetters.classList.remove("hide");
+    restartButton.classList.add("hide");
+});
