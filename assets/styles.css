@@ -53,6 +53,11 @@ body {
     margin-bottom: 1em;
 }
 
+.highlight {
+    color: red;
+    font-size: 1.25em;
+}
+
 input {
     width: 2.25em;
     text-align: center;

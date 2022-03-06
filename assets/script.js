@@ -6,13 +6,25 @@ const guessButton = document.querySelector(".guess-btn");
 const input = document.querySelector(".letter");
 const progress = document.querySelector(".progress");
 const remainingGuesses = document.querySelector(".remaining-guesses");
-const remainingGuessesSpan = document.querySelector("remaining-guesses span");
+const remainingGuessesSpan = document.querySelector(".remaining-guesses span");
 const message = document.querySelector(".message");
 const restartButton = document.querySelector(".restart-btn");
 
-const placeholderWord = "football";
+let placeholderWord = "football";
 const guessedLettersArray = [];
+let guessesLeft = 8;
 
+//function to fetch data containing words; data is derived from a text file I created.
+const getData = async function () {
+    const response = await fetch("https://gist.githubusercontent.com/Lapratomo24/2fb585c3cfac6f355459db5af2211f45/raw/88baadc5bfbdf4c0e5c963287c9551943b919bdd/gistfile1.txt");
+    const randomWords = await response.text();
+    const wordArray = randomWords.split("\n");
+    const randomIndex = Math.floor(Math.random() * wordArray.length);
+    placeholderWord = wordArray[randomIndex].trim();
+    placeholderSymbol(placeholderWord);
+};
+
+getData();
 
 //set up star symbols as placeholders
 const placeholderSymbol = function (placeholderWord) {
@@ -22,9 +34,6 @@ const placeholderSymbol = function (placeholderWord) {
     }
     progress.innerText = placeholderLetters.join("");
 };
-
-placeholderSymbol(placeholderWord);
-
 
 //add event listener to capture letter input
 guessButton.addEventListener("click", function (e) {
@@ -58,8 +67,8 @@ const typeGuess = function (inputValue) {
         message.innerText = "Try another letter you haven't picked 😉";
     } else {
         guessedLettersArray.push(inputValue);
-        console.log(guessedLettersArray);
         letterUpdate();
+        guessCount(inputValue);
         progressUpdate(guessedLettersArray);
     }
 };
@@ -76,7 +85,6 @@ const letterUpdate = function () {
 const progressUpdate = function (guessedLettersArray) {
     const wordUppercase = placeholderWord.toUpperCase();
     const wordArray = wordUppercase.split("");
-    console.log(wordArray);
     const replaceSymbol = [];
     for (let letter of wordArray) {
         if (guessedLettersArray.includes(letter)) {
@@ -89,9 +97,27 @@ const progressUpdate = function (guessedLettersArray) {
     youWon();
 };
 
+const guessCount = function (inputValue) {
+    const uppercaseWord = placeholderWord.toUpperCase();
+    if (!uppercaseWord.includes(inputValue)) {
+        message.innerText = `The word does not contain the letter ${inputValue} 🤔`;
+        guessesLeft -= 1;
+    } else {
+        message.innerText = "Good guess!";
+    }
+    if (guessesLeft === 0) {
+        message.innerHTML = `Too bad, the word you're looking for is <span class="higlight">${placeholderWord}</span>`;
+    } else if (guessesLeft === 1) {
+        remainingGuessesSpan.innerText = `only ${guessesLeft} guess`;
+    } else {
+        remainingGuessesSpan.innerText = `${guessesLeft} guesses`;
+    }
+};
+
 const youWon = function () {
     if (placeholderWord.toUpperCase() === progress.innerText) {
         message.classList.add("win");
         message.innerHTML = `<p class="highlight">You guessed correct the word! Congrats!</p>`;
     }
 };
+
