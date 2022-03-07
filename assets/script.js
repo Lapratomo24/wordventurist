@@ -9,6 +9,8 @@ const remainingGuesses = document.querySelector(".remaining-guesses");
 const remainingGuessesSpan = document.querySelector(".remaining-guesses span");
 const message = document.querySelector(".message");
 const restartButton = document.querySelector(".restart-btn");
+const congrats = document.querySelector(".congrats");
+const retry = document.querySelector(".retry");
 
 let placeholderWord = "football";
 let guessedLettersArray = [];
@@ -108,6 +110,8 @@ const guessCount = function (inputValue) {
     if (guessesLeft === 0) {
         message.innerHTML = `Too bad, the word you're looking for is <span class="emphasize">${placeholderWord}</span> 😅`;
         restartGame();
+        congrats.classList.add("hide");
+        retry.classList.remove("hide");
     } else if (guessesLeft === 1) {
         remainingGuessesSpan.innerHTML = `only <span class="emphasize">${guessesLeft}</span> guess`;
     } else {
@@ -119,6 +123,7 @@ const youWon = function () {
     if (placeholderWord.toUpperCase() === progress.innerText) {
         message.classList.add("win");
         message.innerHTML = `<p class="highlight">Congrats, you've got the correct word! 🎉</p>`;
+        congrats.classList.remove("hide");
         restartGame();
     }
 };
@@ -128,6 +133,7 @@ const restartGame = function () {
     remainingGuesses.classList.add("hide");
     guessedLetters.classList.add("hide");
     restartButton.classList.remove("hide");
+    congrats.classList.remove("hide");
 };
 
 restartButton.addEventListener("click", function (){
@@ -144,4 +150,6 @@ restartButton.addEventListener("click", function (){
     remainingGuesses.classList.remove("hide");
     guessedLetters.classList.remove("hide");
     restartButton.classList.add("hide");
+    congrats.classList.add("hide");
+    retry.classList.add("hide");
 });

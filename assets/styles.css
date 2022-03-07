@@ -22,6 +22,7 @@ body {
 
 .logo {
     padding-top: 2em;
+    padding-bottom: 0.8em;
 }
 
 .container {
@@ -40,13 +41,15 @@ body {
 
 .progress {
     color: #ffc000;
-    font-size: 32px;
+    font-size: 2em;
     font-family: "Bungee Shade", cursive;
     letter-spacing: 10px;
+    margin: 0.75em;
 }
 
 .guessed-letters {
-    color: whitesmoke;
+    color: #faa0a0;
+    padding: 0;
     list-style: none;
     font-family: "Hind", sand-serif;
 }
@@ -64,7 +67,7 @@ body {
 
 .highlight {
     color: whitesmoke;
-    font-size: 1.5em;
+    font-size: 1.15em;
     font-family: "Hind", sand-serif;
     box-shadow: rgba(255, 215, 0) 0px 0px 0px 3px;
     padding: 0.5em;
@@ -112,14 +115,16 @@ input:focus {
 
 .restart-btn {
     margin: 1em;
-    padding: 1em 3em;
+    padding: 1.25em 3em 1em 3em;
     background-color: #ffc000;
     border-radius: 50px;
     border-style: none;
     color: #9f2b68;
-    font-size: 0.7em;
+    font-size: 1em;
     cursor: pointer;
-    font-weight: 900;
+    font-family: "Luckiest Guy", cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .restart-btn:active,
@@ -131,4 +136,14 @@ input:focus {
 .emphasize {
     color: #ffc000;
     text-transform: uppercase;
+}
+
+.congrats {
+    width: 50%;
+    margin: 1em;
+}
+
+.retry {
+    width: 30%;
+    margin: 1em;
 }
