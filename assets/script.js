@@ -53,9 +53,9 @@ const inputValidation = function (input) {
     if (input.length === 0) {
         message.innerText = "Please input a letter of your choice!"
     } else if (input.length > 1) {
-        message.innerText = "Only one letter for every turn!"
+        message.innerHTML = 'Only <span class="emphasize">one</span> letter for every turn!'
     } else if (!input.match(acceptedLetter)) {
-        message.innerText = "Hint: A to Z, no numbers and symbols!"
+        message.innerHTML = '<span class="emphasize">Hint</span>: A to Z, no numbers and symbols!'
     } else {
         return input;
     }
@@ -100,25 +100,25 @@ const progressUpdate = function (guessedLettersArray) {
 const guessCount = function (inputValue) {
     const uppercaseWord = placeholderWord.toUpperCase();
     if (!uppercaseWord.includes(inputValue)) {
-        message.innerText = `The word does not contain the letter ${inputValue} 🤔`;
+        message.innerHTML = `The word <span class="emphasize">does not</span> contain the letter ${inputValue} 🤔`;
         guessesLeft -= 1;
     } else {
-        message.innerText = "Good guess!";
+        message.innerText = "Good guess! 👍";
     }
     if (guessesLeft === 0) {
-        message.innerHTML = `Too bad, the word you're looking for is <span class="higlight">${placeholderWord}</span>`;
+        message.innerHTML = `Too bad, the word you're looking for is <span class="emphasize">${placeholderWord}</span> 😅`;
         restartGame();
     } else if (guessesLeft === 1) {
-        remainingGuessesSpan.innerText = `only ${guessesLeft} guess`;
+        remainingGuessesSpan.innerHTML = `only <span class="emphasize">${guessesLeft}</span> guess`;
     } else {
-        remainingGuessesSpan.innerText = `${guessesLeft} guesses`;
+        remainingGuessesSpan.innerHTML = `<span class="emphasize">${guessesLeft}</span> guesses`;
     }
 };
 
 const youWon = function () {
     if (placeholderWord.toUpperCase() === progress.innerText) {
         message.classList.add("win");
-        message.innerHTML = `<p class="highlight">You guessed correct the word! Congrats!</p>`;
+        message.innerHTML = `<p class="highlight">Congrats, you've got the correct word! 🎉</p>`;
         restartGame();
     }
 };

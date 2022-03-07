@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -11,7 +15,9 @@ body {
     background-image: url('images/triangle.png');
     background-repeat: no-repeat;
     font-size: 20px;
-    color: #fafafa;
+    font-family: "Hind", sand-serif;
+    font-weight: 900;
+    color: whitesmoke;
 }
 
 .logo {
@@ -33,13 +39,16 @@ body {
 }
 
 .progress {
-    color: #ffd700;
-    font-size: 30px;
+    color: #ffc000;
+    font-size: 32px;
+    font-family: "Bungee Shade", cursive;
+    letter-spacing: 10px;
 }
 
 .guessed-letters {
-    color: #fafafa;
+    color: whitesmoke;
     list-style: none;
+    font-family: "Hind", sand-serif;
 }
 
 .guessed-letters li {
@@ -50,12 +59,15 @@ body {
 .guess-form label {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .highlight {
-    color: red;
-    font-size: 1.25em;
+    color: whitesmoke;
+    font-size: 1.5em;
+    font-family: "Hind", sand-serif;
+    box-shadow: rgba(255, 215, 0) 0px 0px 0px 3px;
+    padding: 0.5em;
 }
 
 input {
@@ -64,26 +76,28 @@ input {
     font-size: 1em;
     margin: 0.5em;
     padding: 0.5em;
-    outline: 2px solid #ffbf00;
-    border-radius: 50%;
+    outline: 2px solid #ffc000;;
     color: #9f2b68;
+    text-transform: uppercase;
 }
 
 input:active,
 input:focus {
-    outline: 4px solid #ffbf00;
+    outline: 4px solid #ffc000;
 }
 
 .guess-btn {
     margin: 1em;
-    padding: 1em 3em;
-    background-color: #ffbf00;
+    padding: 1.25em 3em 1em 3em;
+    background-color: #ffc000;
     border-radius: 50px;
     border-style: none;
     color: #9f2b68;
-    font-size: 0.8em;
+    font-size: 1em;
     cursor: pointer;
-    font-weight: 900;
+    font-family: "Luckiest Guy", cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .guess-btn:active,
@@ -99,7 +113,7 @@ input:focus {
 .restart-btn {
     margin: 1em;
     padding: 1em 3em;
-    background-color: #ffbf00;
+    background-color: #ffc000;
     border-radius: 50px;
     border-style: none;
     color: #9f2b68;
@@ -114,6 +128,7 @@ input:focus {
     transform: scale(0.95);
 } 
 
-.progress {
-    letter-spacing: 10px;
+.emphasize {
+    color: #ffc000;
+    text-transform: uppercase;
 }
