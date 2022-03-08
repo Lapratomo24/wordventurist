@@ -122,7 +122,7 @@ const guessCount = function (inputValue) {
 const youWon = function () {
     if (placeholderWord.toUpperCase() === progress.innerText) {
         message.classList.add("win");
-        message.innerHTML = `<p class="highlight">Congrats, you've got the correct word! 🎉</p>`;
+        message.innerHTML = `<p class="highlight">Congrats, you've guessed correctly! 🎉</p>`;
         congrats.classList.remove("hide");
         restartGame();
     }
