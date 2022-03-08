@@ -108,7 +108,7 @@ const guessCount = function (inputValue) {
         message.innerText = "Good guess! 👍";
     }
     if (guessesLeft === 0) {
-        message.innerHTML = `Too bad, the word you're looking for is <span class="emphasize">${placeholderWord}</span> 😅`;
+        message.innerHTML = `Sorry, the word is actually <span class="emphasize">${placeholderWord}</span> 😅`;
         restartGame();
         congrats.classList.add("hide");
         retry.classList.remove("hide");
@@ -122,7 +122,7 @@ const guessCount = function (inputValue) {
 const youWon = function () {
     if (placeholderWord.toUpperCase() === progress.innerText) {
         message.classList.add("win");
-        message.innerHTML = `<p class="highlight">Congrats, you've guessed correctly! 🎉</p>`;
+        message.innerHTML = `<p class="highlight">That's correct, congrats! 🎉</p>`;
         congrats.classList.remove("hide");
         restartGame();
     }
