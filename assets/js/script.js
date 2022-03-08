@@ -16,7 +16,7 @@ let placeholderWord = "football";
 let guessedLettersArray = [];
 let guessesLeft = 8;
 
-//function to fetch data containing words; data is derived from a text file I created.
+//function to fetch data containing words; data is derived from a text file I created
 const getData = async function () {
     const response = await fetch("https://gist.githubusercontent.com/Lapratomo24/2fb585c3cfac6f355459db5af2211f45/raw/88baadc5bfbdf4c0e5c963287c9551943b919bdd/gistfile1.txt");
     const randomWords = await response.text();
@@ -28,7 +28,7 @@ const getData = async function () {
 
 getData();
 
-//set up star symbols as placeholders
+//set up question symbols as placeholders
 const placeholderSymbol = function (placeholderWord) {
     const placeholderLetters = [];
     for (let letter of placeholderWord) {
@@ -63,6 +63,7 @@ const inputValidation = function (input) {
     }
 };
 
+//add function to include each new letter in an array of guessed letters
 const typeGuess = function (inputValue) {
     inputValue = inputValue.toUpperCase();
     if (guessedLettersArray.includes(inputValue)) {
@@ -75,6 +76,7 @@ const typeGuess = function (inputValue) {
     }
 };
 
+//add function to display all guessed letters
 const letterUpdate = function () {
     guessedLetters.innerHTML = "";
     for (let letter of guessedLettersArray) {
@@ -84,6 +86,7 @@ const letterUpdate = function () {
     }
 };
 
+//add function to replace each question symbol with every correct guessed letter
 const progressUpdate = function (guessedLettersArray) {
     const wordUppercase = placeholderWord.toUpperCase();
     const wordArray = wordUppercase.split("");
@@ -99,6 +102,7 @@ const progressUpdate = function (guessedLettersArray) {
     youWon();
 };
 
+//add function for all kinds of messages
 const guessCount = function (inputValue) {
     const uppercaseWord = placeholderWord.toUpperCase();
     if (!uppercaseWord.includes(inputValue)) {
@@ -119,6 +123,7 @@ const guessCount = function (inputValue) {
     }
 };
 
+//add function for a winning message
 const youWon = function () {
     if (placeholderWord.toUpperCase() === progress.innerText) {
         message.classList.add("win");
@@ -128,6 +133,7 @@ const youWon = function () {
     }
 };
 
+//add function to restart the game
 const restartGame = function () {
     guessButton.classList.add("hide");
     remainingGuesses.classList.add("hide");
@@ -136,6 +142,7 @@ const restartGame = function () {
     congrats.classList.remove("hide");
 };
 
+//add event listener for restart button click
 restartButton.addEventListener("click", function (){
     message.classList.remove("win");
     guessesLeft = 8;

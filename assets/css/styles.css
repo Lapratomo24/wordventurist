@@ -150,8 +150,23 @@ input:focus {
     margin: 1em;
 }
 
-/* Responsive layout for smartphone devices from 950px down */
-@media screen and (max-width: 950px) {
+/* Responsive layout for tablet devices from 800px down */
+@media screen and (max-width: 800px) {
+    .logo {
+        width: 85%;
+    }
+
+    .progress {
+        font-size: 1.5em;
+    }
+
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Responsive layout for smartphone devices from 600px down */
+@media screen and (max-width: 600px) {
     .logo {
         width: 70%;
     }
