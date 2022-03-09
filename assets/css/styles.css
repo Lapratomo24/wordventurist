@@ -150,8 +150,8 @@ input:focus {
     margin: 1em;
 }
 
-/* Responsive layout for tablet devices from 800px down */
-@media screen and (max-width: 800px) {
+/* Responsive layout for tablet devices from 950px down */
+@media screen and (max-width: 950px) {
     .logo {
         width: 85%;
     }
