@@ -2,7 +2,7 @@
 
 Welcome to the minigame Word Venturist!
 
-Word Venturist is a simple guess-the-word minigame whereby a user can try and guess a word that is hidden behind the question marks one letter at a time. 
+Word Venturist is a simple guess-the-word minigame whereby a user can try and guess a word that is hidden behind each question mark, one letter at a time. 
 
 The creation of this minigame is intended to showcase the application of JavaScript in a real-world context.
 
@@ -10,11 +10,18 @@ The creation of this minigame is intended to showcase the application of JavaScr
 
 ![Responsive Mockup](assets/readme-images/responsive.png)
 
-## Gitpod Reminders
+## Structure & Design
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The minigame is presented on a single page which is fully responsive across all screen sizes.
 
-`python3 -m http.server`
+![Word Venturis Logo](assets/images/wv-logo.png)
+
+The logo is created on Canva. The color scheme consists of three main colors, namely Amaranth #9F2B68, Golden Yellow #FFC000, and Whitesmoke. 
+
+Google Font's Hind font is applied to the body of the page. Bungee Shade font is used for every guessed letter behind each question mark, while Luckiest Guy font is used for the text on both Guess and Restart buttons respectively.
+
+
+
 
 A blue button should appear to click: _Make Public_,
 

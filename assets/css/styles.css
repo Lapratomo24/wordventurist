@@ -23,8 +23,6 @@ body {
 .logo {
     padding-top: 2em;
     padding-bottom: 0.8em;
-    width: auto;
-    height: auto;
 }
 
 .container {
@@ -121,7 +119,7 @@ input:focus {
     background-color: #ffc000;
     border-radius: 50px;
     border-style: none;
-    color: #9f2b68;
+    color: #aa336a;
     font-size: 1em;
     cursor: pointer;
     font-family: "Luckiest Guy", cursive;
