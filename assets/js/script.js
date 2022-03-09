@@ -112,7 +112,7 @@ const guessCount = function (inputValue) {
         message.innerText = "Good guess! 👍";
     }
     if (guessesLeft === 0) {
-        message.innerHTML = `Sorry, the word is actually <span class="emphasize">${placeholderWord}</span> 😅`;
+        message.innerHTML = `Sorry, the correct word is <span class="emphasize">${placeholderWord}</span> 😅`;
         restartGame();
         congrats.classList.add("hide");
         retry.classList.remove("hide");

@@ -20,6 +20,31 @@ The logo is created on Canva. The color scheme consists of three main colors, na
 
 Google Font's Hind font is applied to the body of the page. Bungee Shade font is used for every guessed letter behind each question mark, while Luckiest Guy font is used for the text on both Guess and Restart buttons respectively.
 
+## Features
+
+- At the top of the page the user will see the aforementioned Word Venturist logo.
+
+- Just under the logo, the amount of displayed question marks represents the initial word hidden behind them for which the user has to guess using the letter input. The words will be randomly fetched from a .txt file I created each time the user restarts the minigame.
+
+- The squared box is where the user will input his or her chosen letter to guess the word behind the question marks.
+
+![Letter Input](assets/readme-images/input.png)
+
+- During the gameplay, some messages will appear to monitor the user's progress. As seen in the image above, one message visible from start to end counts and monitors the remaining guesses the user has until it turns zero. Other messages will pop up just above the question marks which will indicate a correct guess, an incorrect guess, a blank input, a warning to not input a number or a symbol, as well as to remind the user not to input a letter that has already been picked before. Any letter selected will also be displayed just above the input box.
+
+- The user can click the Guess button for each attempt at guessing the word. 
+
+![Guess Button](assets/readme-images/guess.png)
+
+- Two types of message, each accompanied with a .gif image, will be displayed as shown below.
+
+![Win Lose](assets/readme-images/gif-message.jpeg)
+
+- And last but not least, the user will see a Restart Game button which replaces the Guess button whenever he or she wins or loses the minigame.
+
+![Restart Button](assets/readme-images/restart.png)
+
+
 
 
 
