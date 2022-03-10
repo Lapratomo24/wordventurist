@@ -7,17 +7,24 @@
 }
 
 body {
-    background-color: #9F2B68;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-image: url('../images/triangle.png');
-    background-repeat: no-repeat;
+    background: linear-gradient(45deg, #457dc7, #0087c5, #0ea89d, #ffc000) fixed;
+    background-size: 200%;
+    animation: animate 5s ease infinite;
     font-size: 20px;
     font-family: "Hind", sand-serif;
     font-weight: 900;
     color: whitesmoke;
+}
+
+/* Animated gradient background */
+@keyframes animate {
+    0%{background-position: 0% 50%}
+    50%{background-position: 100% 50%}
+    100%{background-position: 0% 50%}
 }
 
 .logo {
@@ -48,7 +55,7 @@ body {
 }
 
 .guessed-letters {
-    color: #faa0a0;
+    color: #ffe5b4;
     padding: 0;
     list-style: none;
     font-family: "Hind", sand-serif;
@@ -80,7 +87,7 @@ input {
     margin: 0.5em;
     padding: 0.5em;
     outline: 2px solid #ffc000;;
-    color: #9f2b68;
+    color: #34A65E;
     text-transform: uppercase;
 }
 
@@ -95,7 +102,7 @@ input:focus {
     background-color: #ffc000;
     border-radius: 50px;
     border-style: none;
-    color: #aa336a;
+    color: #34A65E;
     font-size: 1em;
     cursor: pointer;
     font-family: "Luckiest Guy", cursive;
@@ -119,7 +126,7 @@ input:focus {
     background-color: #ffc000;
     border-radius: 50px;
     border-style: none;
-    color: #aa336a;
+    color: #34A65E;
     font-size: 1em;
     cursor: pointer;
     font-family: "Luckiest Guy", cursive;

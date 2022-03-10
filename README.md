@@ -16,7 +16,7 @@ The minigame is presented on a single page which is fully responsive across all 
 
 ![Word Venturis Logo](assets/images/wv-logo.png)
 
-The logo is created on Canva. The color scheme consists of three main colors, namely Amaranth #9F2B68, Golden Yellow #FFC000, and Whitesmoke. 
+The logo is created on Canva. The color scheme for the page consists of three main colors, namely Amaranth #9F2B68, Golden Yellow #FFC000, and Whitesmoke. 
 
 Google Font's Hind font is applied to the body of the page. Bungee Shade font is used for every guessed letter behind each question mark, while Luckiest Guy font is used for the text on both Guess and Restart buttons respectively.
 
@@ -30,19 +30,37 @@ Google Font's Hind font is applied to the body of the page. Bungee Shade font is
 
 ![Letter Input](assets/readme-images/input.png)
 
-- During the gameplay, some messages will appear to monitor the user's progress. As seen in the image above, one message visible from start to end counts and monitors the remaining guesses the user has until it turns zero. Other messages will pop up just above the question marks which will indicate a correct guess, an incorrect guess, a blank input, a warning to not input a number or a symbol, as well as to remind the user not to input a letter that has already been picked before. Any letter selected will also be displayed just above the input box.
+- During the gameplay, some messages will appear to monitor the user's progress. As seen in the image above, one message visible from start to end counts and monitors the remaining guesses the user has until it runs out. Other messages will pop up just above the question marks which will indicate a correct guess, an incorrect guess, a blank input, a warning to not input a number or a symbol, and another warning to remind the user not to input a letter that has already been picked before. Any letter selected will also be displayed between the question marks and the remaining guesses message.
 
 - The user can click the Guess button for each attempt at guessing the word. 
 
 ![Guess Button](assets/readme-images/guess.png)
 
-- Two types of message, each accompanied with a .gif image, will be displayed as shown below.
+- Two types of message, each accompanied with a .gif image, will be displayed as shown below whenever the user wins or loses at the end.
 
-![Win Lose](assets/readme-images/gif-message.jpeg)
+![Win Lose](assets/readme-images/winandlose.jpeg)
 
-- And last but not least, the user will see a Restart Game button which replaces the Guess button whenever he or she wins or loses the minigame.
+- And last but not least, the user will see a Restart Game button which replaces the Guess button whenever the user runs out of attempts after winning or losing at the end. 
 
 ![Restart Button](assets/readme-images/restart.png)
+
+## Technologies
+
+- HTML5 - Provides the content and structure of Word Venturist.
+- CSS3 - Provides the styling for Word Venturist.
+- JavaScript - Provides interactivity for Word Venturist.
+- Gitpod - An integrated development environment to create and develop projects from scratch.
+- Github - Provides storage for codes and acts as a host to deploy live projects.
+- GoogleFonts - Provides chosen fonts for Word Venturist.
+- Canva - Used to create Word Venturist logo and partners' icons.
+- Emojipedia - Provides all emojis used on Word Venturist.
+- Toner - Provides all gif images used on Word Venturist.
+- AmIResponsive - Generates website mockup to check Word Venturist's responsiveness.
+- ChromeDevTools - Used for debugging purposes.
+- W3C-HTML - HTML validation service.
+- W3C-CSS - CSS validation service.
+- JSHint - JavaScript validation service.
+- Webformatter - Used for proper code indentation.
 
 ## Testing
 
@@ -113,6 +131,7 @@ Forking is used to create a copy of a repository, where it can be viewed and edi
 
 - The website [MDN](https://developer.mozilla.org/en-US/) was used as a guidance on how to write JavaScript code.
 - Code Institute's own Love Math project was also used as a reference.
+- Special credit is to be given to [Skillcrush](https://skillcrush.com/), another coding bootcamp which I took part in a few years ago but never finished as I lost my motivation back then. I can still access my lessons which makes it a bit easier to restart learning JS, as personally it is impossible for me to understand JS from only a single source or two.
 
 ### Content
 
@@ -121,11 +140,12 @@ Forking is used to create a copy of a repository, where it can be viewed and edi
 - Word Venturist logo was created on [Canva](https://www.canva.com/).
 - The fonts used were generated from [GoogleFonts](https://www.fonts.google.com/).
 - The patterned background was taken from [Arcadia](https://2020presidentsreport.arcadia.edu/hd-pattern-png-transparent-triangle-transparent-png-image-pattern-transparent-2048_1024/)
-- The website [HTMLColorCodes](https://htmlcolorcodes.com/) was used as a reference to determine the color combination.
+- The website [HTMLColorCodes](https://htmlcolorcodes.com/) was used as a reference to determine color combination.
+- The website [MyColor.Space](https://mycolor.space/) was used as a reference to determine animated gradient background.
 
 ### Acknowledgments
 
-I would like to thank my mentor [Akshat Garg](https://www.linkedin.com/in/akshatnitd/) for his support throughout my second milestone project, especially with the fact that I still have difficulties to refactor JS code to make it clearer and cleaner for others to read. I also give my thanks to Code Institute for the prototype project Love Math. And lastly, I am grateful to the Slack Community for the helpful review of my website.
+I would like to thank my mentor [Akshat Garg](https://www.linkedin.com/in/akshatnitd/) for his support throughout my second milestone project, especially due to the fact that I still have difficulties to refactor JS code to make it clearer and cleaner for others to read. I also give my thanks to Code Institute for the prototype project Love Math. And lastly, I am grateful to the Slack Community for the helpful review of my website.
 
 See you in the third milestone project!
 
