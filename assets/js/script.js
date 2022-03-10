@@ -3,7 +3,7 @@
 //global variables
 const guessedLetters = document.querySelector(".guessed-letters");
 const guessButton = document.querySelector(".guess-btn");
-const input = document.querySelector(".letter");
+const input = document.querySelector("#letter");
 const progress = document.querySelector(".progress");
 const remainingGuesses = document.querySelector(".remaining-guesses");
 const remainingGuessesSpan = document.querySelector(".remaining-guesses span");
@@ -53,11 +53,11 @@ guessButton.addEventListener("click", function (e) {
 const inputValidation = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
     if (input.length === 0) {
-        message.innerText = "Please input a letter of your choice!"
+        message.innerText = "Please input a letter of your choice!";
     } else if (input.length > 1) {
-        message.innerHTML = 'Only <span class="emphasize">one</span> letter for every turn!'
+        message.innerHTML = 'Only <span class="emphasize">one</span> letter for every turn!';
     } else if (!input.match(acceptedLetter)) {
-        message.innerHTML = '<span class="emphasize">Hint</span>: A to Z, no numbers and symbols!'
+        message.innerHTML = '<span class="emphasize">Hint</span>: A to Z, no numbers and symbols!';
     } else {
         return input;
     }

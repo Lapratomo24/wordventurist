@@ -10,16 +10,16 @@
 </head>
 <body>
     <div class="container">
-        <img class="logo" src="assets/images/wv-logo.png" alt="Wordventurist Logo" width="100%" height="100%"/>
+        <img class="logo" src="assets/images/wv-logo.png" alt="Wordventurist Logo" style="width:100%; height:100%;" />
         <p class="message"></p>
         <p class="progress"></p>
         <img class="congrats hide" src="assets/images/congrats.gif" alt="congrats text" />
         <img class="retry hide" src="assets/images/retry.gif" alt="try-again text" />
         <p class="remaining-guesses">You have <span>8 guesses</span> remaining.</p>
         <ul class="guessed-letters"></ul>
-        <form action="" class="guess-form">
+        <form class="guess-form">
             <label for="letter">Type a letter:</label>
-            <input class="letter" type="text" name="letter" aria-label="Input a letter here" />
+            <input id="letter" type="text" name="letter" aria-label="Input a letter here" />
             <div class="">
                 <button class="guess-btn" aria-label="Guess">Guess!</button>
             </div>
