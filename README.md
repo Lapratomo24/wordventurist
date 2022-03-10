@@ -78,6 +78,57 @@ Word Venturist has been officially validated through W3C Validators for both HTM
 ![Lighthouse](assets/readme-images/lighthouse.png)
 <br />
 
+## Deployment
+
+### GitHub Pages
+
+Word Venturist as the second milestone project was deployed to GitHub pages with the following steps:
+
+1. Navigate to the 'Settings' tab in the GitHub repository.
+2. Navigate to the Pages tab on the left sidebar and click it.
+3. Select 'main branch' from the dropdown menu.
+4. Once selected, the page should automatically refresh with a detailed ribbon display to indicate successful deployment.
+
+### Forking the Repository
+
+Forking is used to create a copy of a repository, where it can be viewed and edited without affecting the original repository. This can be done through the following steps:
+
+1. Locate the repository.
+2. Locate the 'Fork' button on the right side of the page. Clicking the button results in the creation of a copy of the repository.
+3. The copy is now found in your GitHub account.
+
+### Cloning the Repository
+
+1. Locate the repository.
+2. Click the 'Code' button to the left of the green 'Gitpod' button.
+3. Copy the link under HTTPS by clicking the clipboard icon.
+4. Open Git Bash.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type git clone and then paste the copied link form GitHub.
+7. Pressing 'Enter' will result in the creation of the local clone.
+
+## Credits
+
+### Code
+
+- The website [MDN](https://developer.mozilla.org/en-US/) was used as a guidance on how to write JavaScript code.
+- Code Institute's own Love Math project was also used as a reference.
+
+### Content
+
+- Emojis were taken from [Emojipedia](https://emojipedia.org/).
+- Gif images were taken from [Tenor](https://tenor.com/).
+- Word Venturist logo was created on [Canva](https://www.canva.com/).
+- The fonts used were generated from [GoogleFonts](https://www.fonts.google.com/).
+- The patterned background was taken from [Arcadia](https://2020presidentsreport.arcadia.edu/hd-pattern-png-transparent-triangle-transparent-png-image-pattern-transparent-2048_1024/)
+- The website [HTMLColorCodes](https://htmlcolorcodes.com/) was used as a reference to determine the color combination.
+
+### Acknowledgments
+
+I would like to thank my mentor [Akshat Garg](https://www.linkedin.com/in/akshatnitd/) for his support throughout my second milestone project, especially with the fact that I still have difficulties to refactor JS code to make it clearer and cleaner for others to read. I also give my thanks to Code Institute for the prototype project Love Math. And lastly, I am grateful to the Slack Community for the helpful review of my website.
+
+See you in the third milestone project!
+
 
 ---
 
