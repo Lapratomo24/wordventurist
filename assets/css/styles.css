@@ -173,7 +173,7 @@ input:focus {
 /* Responsive layout for smartphone devices from 600px down */
 @media screen and (max-width: 600px) {
     .logo {
-        width: 70%;
+        width: 60%;
     }
 
     .progress {

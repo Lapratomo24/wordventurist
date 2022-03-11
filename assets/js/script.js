@@ -4,7 +4,7 @@
 const guessedLetters = document.querySelector(".guessed-letters");
 const guessButton = document.querySelector(".guess-btn");
 const input = document.querySelector("#letter");
-const progress = document.querySelector(".progress");
+const placeholderSymbols = document.querySelector(".progress");
 const remainingGuesses = document.querySelector(".remaining-guesses");
 const remainingGuessesSpan = document.querySelector(".remaining-guesses span");
 const message = document.querySelector(".message");
@@ -12,29 +12,29 @@ const restartButton = document.querySelector(".restart-btn");
 const congrats = document.querySelector(".congrats");
 const retry = document.querySelector(".retry");
 
-let placeholderWord = "football";
+let word = "football";
 let guessedLettersArray = [];
 let guessesLeft = 8;
 
 //function to fetch data containing words; data is derived from a text file I created
-const getData = async function () {
+const getWordsFromApi = async function () {
     const response = await fetch("https://gist.githubusercontent.com/Lapratomo24/2fb585c3cfac6f355459db5af2211f45/raw/88baadc5bfbdf4c0e5c963287c9551943b919bdd/gistfile1.txt");
     const randomWords = await response.text();
     const wordArray = randomWords.split("\n");
     const randomIndex = Math.floor(Math.random() * wordArray.length);
-    placeholderWord = wordArray[randomIndex].trim();
-    placeholderSymbol(placeholderWord);
+    word = wordArray[randomIndex].trim();
+    displayWordPlaceholder(word);
 };
 
-getData();
+getWordsFromApi();
 
 //set up question symbols as placeholders
-const placeholderSymbol = function (placeholderWord) {
+const displayWordPlaceholder = function (word) {
     const placeholderLetters = [];
-    for (let letter of placeholderWord) {
+    for (let letter of word) {
         placeholderLetters.push("❔");
     }
-    progress.innerText = placeholderLetters.join("");
+    placeholderSymbols.innerText = placeholderLetters.join("");
 };
 
 //add event listener to capture letter input
@@ -42,29 +42,32 @@ guessButton.addEventListener("click", function (e) {
     e.preventDefault();
     message.innerText="";
     const inputValue = input.value;
-    const checkDoubleInput = inputValidation(inputValue);
+    const checkDoubleInput = runInputValidation(inputValue);
     if (checkDoubleInput) {
-        typeGuess(inputValue);
+        onLetterGuess(inputValue);
     }
     input.value="";
 });
 
 //add function to validate input
-const inputValidation = function (input) {
+const runInputValidation = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
     if (input.length === 0) {
         message.innerText = "Please input a letter of your choice!";
+      return false;
     } else if (input.length > 1) {
         message.innerHTML = 'Only <span class="emphasize">one</span> letter for every turn!';
+      return false;
     } else if (!input.match(acceptedLetter)) {
         message.innerHTML = '<span class="emphasize">Hint</span>: A to Z, no numbers and symbols!';
+      return false;
     } else {
-        return input;
+        return true;
     }
 };
 
 //add function to include each new letter in an array of guessed letters
-const typeGuess = function (inputValue) {
+const onLetterGuess = function (inputValue) {
     inputValue = inputValue.toUpperCase();
     if (guessedLettersArray.includes(inputValue)) {
         message.innerText = "Try another letter you haven't picked 😉";
@@ -88,7 +91,7 @@ const letterUpdate = function () {
 
 //add function to replace each question symbol with every correct guessed letter
 const progressUpdate = function (guessedLettersArray) {
-    const wordUppercase = placeholderWord.toUpperCase();
+    const wordUppercase = word.toUpperCase();
     const wordArray = wordUppercase.split("");
     const replaceSymbol = [];
     for (let letter of wordArray) {
@@ -98,13 +101,13 @@ const progressUpdate = function (guessedLettersArray) {
             replaceSymbol.push("❔");
         }
     }
-    progress.innerText = replaceSymbol.join("");
-    youWon();
+    placeholderSymbols.innerText = replaceSymbol.join("");
+    onGameWin();
 };
 
 //add function for all kinds of messages
 const guessCount = function (inputValue) {
-    const uppercaseWord = placeholderWord.toUpperCase();
+    const uppercaseWord = word.toUpperCase();
     if (!uppercaseWord.includes(inputValue)) {
         message.innerHTML = `The word <span class="emphasize">does not</span> contain the letter ${inputValue} 🤔`;
         guessesLeft -= 1;
@@ -112,7 +115,7 @@ const guessCount = function (inputValue) {
         message.innerText = "Good guess! 👍";
     }
     if (guessesLeft === 0) {
-        message.innerHTML = `Sorry, the correct word is <span class="emphasize">${placeholderWord}</span> 😅`;
+        message.innerHTML = `Sorry, the correct word is <span class="emphasize">${word}</span> 😅`;
         restartGame();
         congrats.classList.add("hide");
         retry.classList.remove("hide");
@@ -124,8 +127,8 @@ const guessCount = function (inputValue) {
 };
 
 //add function for a winning message
-const youWon = function () {
-    if (placeholderWord.toUpperCase() === progress.innerText) {
+const onGameWin = function () {
+    if (word.toUpperCase() === placeholderSymbols.innerText) {
         message.classList.add("win");
         message.innerHTML = `<p class="highlight">That's correct, congrats! 🎉</p>`;
         congrats.classList.remove("hide");
@@ -151,7 +154,7 @@ restartButton.addEventListener("click", function (){
     guessedLetters.innerHTML = "";
     message.innerText = "";
     
-    getData();
+    getWordsFromApi();
 
     guessButton.classList.remove("hide");
     remainingGuesses.classList.remove("hide");
