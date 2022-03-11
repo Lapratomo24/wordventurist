@@ -46,6 +46,7 @@ body {
     flex-direction: column;
 }
 
+/* Style the letter behind placeholder symbols */
 .progress {
     color: #ffc000;
     font-size: 2em;
@@ -54,6 +55,7 @@ body {
     margin: 0.75em;
 }
 
+/* Display every letter after each input in a horizontal list */
 .guessed-letters {
     color: #ffe5b4;
     padding: 0;
@@ -72,6 +74,7 @@ body {
     margin-bottom: 0.5em;
 }
 
+/* Highlight winning message */
 .highlight {
     color: whitesmoke;
     font-size: 1.15em;
@@ -80,6 +83,7 @@ body {
     padding: 0.5em;
 }
 
+/* Display squared box for input */
 input {
     width: 2.25em;
     text-align: center;
@@ -96,6 +100,7 @@ input:focus {
     outline: 4px solid #ffc000;
 }
 
+/* Display guess button */
 .guess-btn {
     margin: 1em;
     padding: 1.25em 3em 1em 3em;
@@ -116,10 +121,12 @@ input:focus {
     transform: scale(0.95);
 } 
 
+/* Class to both display and hide buttons and messages */
 .hide {
     display: none;
 }
 
+/* Display restart button */
 .restart-btn {
     margin: 1em;
     padding: 1.25em 3em 1em 3em;
@@ -140,16 +147,19 @@ input:focus {
     transform: scale(0.95);
 } 
 
+/* Emphasize some hints in messages */
 .emphasize {
     color: #ffc000;
     text-transform: uppercase;
 }
 
+/* Display winning gif image */
 .congrats {
     width: 50%;
     margin: 1em;
 }
 
+/* Display losing gif image */
 .retry {
     width: 30%;
     margin: 1em;
