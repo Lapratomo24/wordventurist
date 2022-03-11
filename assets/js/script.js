@@ -40,13 +40,13 @@ const displayWordPlaceholder = function (word) {
 //add event listener to capture letter input
 guessButton.addEventListener("click", function (e) {
     e.preventDefault();
-    message.innerText="";
+    message.innerText = "";
     const inputValue = input.value;
     const checkDoubleInput = runInputValidation(inputValue);
     if (checkDoubleInput) {
         onLetterGuess(inputValue);
     }
-    input.value="";
+    input.value = "";
 });
 
 //add function to validate input
@@ -54,13 +54,13 @@ const runInputValidation = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
     if (input.length === 0) {
         message.innerText = "Please input a letter of your choice!";
-      return false;
+        return false;
     } else if (input.length > 1) {
         message.innerHTML = 'Only <span class="emphasize">one</span> letter for every turn!';
-      return false;
+        return false;
     } else if (!input.match(acceptedLetter)) {
         message.innerHTML = '<span class="emphasize">Hint</span>: A to Z, no numbers and symbols!';
-      return false;
+        return false;
     } else {
         return true;
     }
@@ -146,14 +146,14 @@ const restartGame = function () {
 };
 
 //add event listener for restart button click
-restartButton.addEventListener("click", function (){
+restartButton.addEventListener("click", function () {
     message.classList.remove("win");
     guessesLeft = 8;
     guessedLettersArray = [];
     remainingGuessesSpan.innerText = `${guessesLeft} guesses`;
     guessedLetters.innerHTML = "";
     message.innerText = "";
-    
+
     getWordsFromApi();
 
     guessButton.classList.remove("hide");
